@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Interactive Video Player</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://fonts.googleapis.com/css?family=Alegreya+Sans' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/styles.css">
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <div id="container">
+          <video id="video" preload="metadata">
+            <source src="video/video.mp4" type="video/mp4">
+            <source src="video/video.ogg" type="video/ogg">
+            <track label="English" kind="subtitles" srclang="en" src="video/captions.vtt" default>
+          </video>
+
+          <progress max="100" id="buffered" value="0"></progress>
+          <progress max="100" id="seek" value="0"></progress>
+          <div id="video-controls" class="controls" data-state="hidden">
+            <button id="playpause" type="button" data-state="play">
+              <img id="playpause-icon" src="icons/play-icon.png" alt="Play Button" />
+            </button>
+
+            <span id="current-time">0:00</span> <span id="slash">/</span> <span id="duration">0:59</span>
+
+            <button id="volinc" type="button" data-state="volup">+</button>
+            <span id="volume">VOL</span>
+            <button id="voldec" type="button" data-state="voldown">-</button>
+
+            <button id="mute" type="button" data-state="mute">
+              <img id="mute-icon" src="icons/volume-on-icon.png" alt="Mute" />
+            </button>
+
+            <button id="fullscreen" type="button" data-state="go-fullscreen">
+              <img id="fullscreen-icon" src="icons/fullscreen-icon.png" alt="Full Screen" />
+            </button>
+
+
+          </div>
+
+
+        </div>
+
+        <p id="transcript"></p>
+
+    </div>
+
+
+  <script src="js/app.js" type="text/javascript"></script>
+  </body>
+
+</html>

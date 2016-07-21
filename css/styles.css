@@ -1,0 +1,200 @@
+/*=============================
+GENERAL STYLES
+=============================*/
+*, *::after, *:before {
+    box-sizing: border-box;
+}
+
+body {
+  font-family: 'Alegreya Sans', sans-serif;
+  font-size: 1.1em;
+  line-height: 1.75;
+  color: #4d4d4d;
+}
+
+p {
+  margin: .75em 1.5em;
+}
+
+/*=============================
+VIDEO
+=============================*/
+/* Video */
+video {
+  width: 100%;
+}
+
+#container {
+  position: relative;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+/* Video Controls */
+.controls {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin-top: 10px;
+  padding: 10px 15px 0;
+  background: transparent;
+  opacity: 0;
+  transition: all 0.5s ease-in-out;
+}
+
+#container:hover .controls {
+  opacity: 1;
+  -webkit-transform: translate(0,-68px);
+    -o-transform: translate(0,-68px);
+    -moz-transform: translate(0,-68px);
+    -ms-transform: translate(0,-68px);
+        transform: translate(0,-68px);
+}
+
+button {
+  background: transparent;
+  border: none;
+}
+
+#playpause,
+#current-time,
+#slash,
+#duration {
+  float: left;
+}
+
+#current-time,
+#slash,
+#duration {
+  color: white;
+  font-size: 1em;
+  font-weight: bold;
+  display: inline-block;
+  line-height: 2;
+  font-family: sans-serif;
+}
+
+#current-time {
+  padding-left: 15px;
+}
+
+#slash {
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#duration {
+  padding-right: 10px;
+}
+
+#volume,
+#volinc,
+#voldec {
+  float: right;
+  font-weight: bold;
+  color: white;
+}
+
+#volume {
+  font-family: sans-serif;
+  line-height: 2.1;
+  font-size: 0.9em;
+}
+
+#volinc,
+#voldec {
+  font-size: 1.5em;
+  line-height: 1;
+  padding-right: 10px;
+}
+
+#volinc {
+  padding-left: 10px;
+}
+
+#mute {
+  float: right;
+  padding-right: 15px;
+}
+
+#fullscreen {
+  float: right;
+}
+
+video::cue {
+  font-family: 'Alegreya Sans', sans-serif;
+  font-size: .6em;
+  line-height: 1.2;
+}
+
+.active-cue {
+  color: #ed8004;
+  transition: all .6s ease-in-out;
+}
+
+.inactive-cue {
+  color: #645f5f;
+  transition: all .6s ease-in-out;
+}
+
+#transcript span {
+  cursor: pointer;
+}
+
+/* Progress Bars */
+progress[value] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  height: 3px;
+  border: none;
+  background-color: rgba(231, 230, 230, 0.1);
+}
+
+#buffered,
+#seek {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 97%;
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  transition: all 0.5s ease-in-out;
+}
+
+#seek {
+  z-index: 1;
+}
+
+#container:hover #buffered,
+#container:hover #seek {
+  -webkit-transform: translate(0,-35px);
+  -o-transform: translate(0,-35px);
+  -moz-transform: translate(0,-35px);
+  -ms-transform: translate(0,-35px);
+      transform: translate(0,-35px);
+}
+
+#buffered::webkit-progress-bar,
+#seek::webkit-progress-bar {
+  background-color: rgba(231, 230, 230, 0.1);
+}
+
+#seek::webkit-progress-bar {
+  background-color: orange;
+}
+
+#buffered::-webkit-progress-value {
+  background-color: rgba(0, 0, 0, .5);
+}
+
+#buffered::-moz-progress-bar {
+  background-color: rgba(0, 0, 0, .5);
+  height: 3px;
+}
+
+#seek::-moz-progress-bar {
+  background-color: orange;
+  height: 3px;
+}
